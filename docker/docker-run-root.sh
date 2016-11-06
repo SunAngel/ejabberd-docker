@@ -3,7 +3,7 @@
 #Fix user home directory permissions 
 #  if needed and exec docker-run script
 
-RUN_USER="ejabber"
+RUN_USER="ejabberd"
 USER_DIR=`eval echo "~$RUN_USER"`
 
 DIR_OWNER=`stat -c '%U' "$USER_DIR"`
@@ -12,6 +12,5 @@ if [ "$DIR_OWNER" != "$RUN_USER" ]; then
 	chown -R "$RUN_USER:$RUN_USER" "$USER_DIR"
 fi
 
-/bin/sh
 exec su -l -c 'exec /bin/docker-run' $RUN_USER
 
