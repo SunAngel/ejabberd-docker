@@ -79,7 +79,7 @@ wget "https://github.com/processone/ejabberd/archive/${SW_VERSION}.tar.gz" -O- |
 cd "$WORK_DIR/ejabberd-${SW_VERSION}"
 ./autogen.sh && \
 	./configure --prefix=/usr/local --localstatedir="${DATA_DIR}/var" --sysconfdir="${DATA_DIR}/etc" \
-	--enable-user=ejabberd && \
+	--enable-user=ejabberd \
 	--enable-odbc --enable-mysql --enable-pgsql --enable-sqlite \
    	--enable-zlib --enable-iconv --enable-tools \
 	&& \
