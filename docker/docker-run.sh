@@ -1,4 +1,8 @@
 #!/bin/sh
 #set -x
 
-exec /bin/sh
+cd $HOME
+
+[ ! -d ./etc ] && tar xzf /usr/local/share/ejabberd.tgz
+
+exec ejabberdctl foreground

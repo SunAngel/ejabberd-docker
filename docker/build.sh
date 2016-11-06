@@ -38,6 +38,9 @@ cd $WORK_DIR
 [ -z "$uUID" ] && uUID=2016
 [ -z "$uGID" ] && uGID=2016
 
+# First, add ejabberd user
+addgroup -g "$uGID" ejabberd
+adduser -D -s /bin/sh -g "EjabberD XMPP Server" -G ejabberd -h "$DATA_DIR" -u "$uUID" ejabberd
 
 ################################
 # Install some needed packages #
@@ -47,10 +50,14 @@ apk update
 # Runtime dependencies for ejabberd #
 #  Not all erlang libs are needed,  #
 #  but nobody can say, which are    #
-#  needed                           #
+#  needed, so some libs could be    #
+#  missed                           #
 #####################################
 apk add expat yaml openssl zlib imagemagick sqlite erlang erlang-crypto \
-	erlang-syntax-tools erlang-eunit erlang-asn1 erlang-parsetools
+	erlang-syntax-tools erlang-eunit erlang-asn1 erlang-parsetools \
+	bash \
+	erlang-sasl erlang-ssl erlang-public-key erlang-mnesia erlang-inets
+
 
 #	erlang-hipe
 #################################################
@@ -71,18 +78,16 @@ wget "https://github.com/processone/ejabberd/archive/${SW_VERSION}.tar.gz" -O- |
 ##############################
 cd "$WORK_DIR/ejabberd-${SW_VERSION}"
 ./autogen.sh && \
-	./configure --prefix=/usr/local \
-	--enable-odbc --enable-mysql --enable-pgsql --enable-sqlite --enable-zlib --enable-iconv && \
+	./configure --prefix=/usr/local --localstatedir="${DATA_DIR}/var" --sysconfdir="${DATA_DIR}/etc" \
+	--enable-user=ejabberd && \
+	--enable-odbc --enable-mysql --enable-pgsql --enable-sqlite \
+   	--enable-zlib --enable-iconv --enable-tools \
+	&& \
 	make && make install
 
+# Backup DATA_DIR somewhere
+tar czf /usr/local/share/ejabberd.tgz -C "$DATA_DIR" ./
 
-########################
-# Do some preparations #
-# Like add ffsync user #
-########################
-
-addgroup -g "$uGID" ejabber
-adduser -D -s /bin/sh -g "EjabberD XMPP Server" -G ejabber -h "$DATA_DIR" -u "$uUID" ejabber
 
 #########################################
 # Delete all unneded files and packages #

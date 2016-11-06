@@ -4,14 +4,14 @@ MAINTAINER Vladimir Goshev <sunx@sunx.name>
 # DATA_DIR:
 # Where we will store config and db.
 #  Also it's user home directory.
-# Default: /home/ejabber
+# Default: /home/ejabberd
 #
 # SW_VERSION:
 #	Version of ejabberd
 #  which we want to use for our Mozilla Syncserver
 # uUID - set UID of ffsync user, default: 2016
 # uGID - set GID of ffsync user, default: 2016
-ENV DATA_DIR="/home/ejabber" \
+ENV DATA_DIR="/home/ejabberd" \
 	SW_VERSION="16.09"
 
 # All installation proccess is in build.sh
@@ -31,5 +31,5 @@ VOLUME $DATA_DIR
 
 # Container will run some preparations with root access (fixing permissions, for example)
 #   and then execute /bin/docker-run with user access to configure (if needed) and run
-#		Syncserver
+#		Ejabberd
 CMD ["/bin/docker-run-root"]
