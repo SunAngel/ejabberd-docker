@@ -18,7 +18,8 @@ DOCKER_ARGS=""
 
 #You can change default values by adding them to config file
 CONFIG_FILE="~/.docker-sunx-ejabberd"
-[ -f "$CONFIG_FILE" ] && . $CONFIG_FILE
+CONFIG_FILE=`eval echo $CONFIG_FILE`
+[ -f $CONFIG_FILE ] && . $CONFIG_FILE
 
 [ ! -z "$CONTAINER_HOSTNAME" ] && CONTAINER_HOSTNAME="--hostname=$CONTAINER_HOSTNAME"
 [ ! -z "$CONTAINER_NAME" ]     && CONTAINER_NAME="--name=$CONTAINER_NAME"
@@ -26,11 +27,7 @@ CONFIG_FILE="~/.docker-sunx-ejabberd"
 
 $DOCKER $DOCKER_ARGS run \
 	-v $VOLUME_PATH:/home/ejabberd \
-	-p 58334:58334 -p 5280:5280 \
-	-p 127.0.0.1:7777:7777 -p 5222:5222 \
-	-p 5223:5223 -p 5288:5288 \
-	-p 4369:4369 -p 5300:5300 \
-	-p 5269:5269 \
+	-p 5222:5222 -p 5223:5223 -p 5269:5269 \
 	$CONTAINER_HOSTNAME \
 	$CONTAINER_NAME \
 	$RESTART_POLICY \

@@ -26,7 +26,7 @@ RUN /tmp/build.sh "$SW_VERSION" "$DATA_DIR" && rm /tmp/build.sh
 COPY docker-run.sh /bin/docker-run
 COPY docker-run-root.sh /bin/docker-run-root
 
-EXPOSE 5222 5223 5296 5280 5288 
+EXPOSE 5222 5223 5296
 VOLUME $DATA_DIR
 
 # Container will run some preparations with root access (fixing permissions, for example)
