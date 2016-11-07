@@ -22,11 +22,15 @@ CONFIG_FILE="~/.docker-sunx-ejabberd"
 
 [ ! -z "$CONTAINER_HOSTNAME" ] && CONTAINER_HOSTNAME="--hostname=$CONTAINER_HOSTNAME"
 [ ! -z "$CONTAINER_NAME" ]     && CONTAINER_NAME="--name=$CONTAINER_NAME"
-[ ! -z "$RESTART_POLICY" ]      && RESTART_POLICY="--restart=$RESTART_POLICY"
+[ ! -z "$RESTART_POLICY" ]     && RESTART_POLICY="--restart=$RESTART_POLICY"
 
 $DOCKER $DOCKER_ARGS run \
-	-v $VOLUME_PATH:/home/ejabber \
-	-p 127.0.0.1:5000:5000 \
+	-v $VOLUME_PATH:/home/ejabberd \
+	-p 58334:58334 -p 5280:5280 \
+	-p 127.0.0.1:7777:7777 -p 5222:5222 \
+	-p 5223:5223 -p 5288:5288 \
+	-p 4369:4369 -p 5300:5300 \
+	-p 5269:5269 \
 	$CONTAINER_HOSTNAME \
 	$CONTAINER_NAME \
 	$RESTART_POLICY \
