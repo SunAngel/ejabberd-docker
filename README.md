@@ -17,7 +17,7 @@ docker run \
 
 After first run container will create default configuration files for ejabberd in `/home/ejabberd/etc/ejabberd/` directory, which you should edit manually. Default configuration file is well documented, so you shouldn't have any problems in changeing it. Also you can read [official manual](https://docs.ejabberd.im/admin/configuration/) for help.
 
- ## Detailed description of image and containers
+## Detailed description of image and containers
 
 ### Used ports
 
