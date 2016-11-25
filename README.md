@@ -41,6 +41,6 @@ For ejabberd configuration you can read [official ejabberd documentation](https:
 
 ## License
 
-This Dockerfile and scripts are released under [MIT License](https://github.com/SunAngel/mozilla-syncserver-docker/blob/master/LICENSE).
+This Dockerfile and scripts are released under [MIT License](https://github.com/SunAngel/ejabberd-docker/blob/master/LICENSE).
 
 [ejabberd](https://github.com/processone/ejabberd/blob/master/COPYING) has its own license.
