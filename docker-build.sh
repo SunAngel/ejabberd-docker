@@ -2,4 +2,4 @@
 
 cd `dirname $0`
 
-docker build -t sunx/ejabberd ./docker/
+docker build -t sunx/ejabberd:beta ./docker/
