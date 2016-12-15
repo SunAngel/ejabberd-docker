@@ -3,8 +3,8 @@ Docker image with [Ejabberd XMPP Server](https://www.ejabberd.im/).
 
 ## Supported tags and respective `Dockerfile` links
 
-* [`16.09`](https://github.com/SunAngel/ejabberd-docker/blob/16.09/docker/Dockerfile), [`latest`](https://github.com/SunAngel/ejabberd-docker/blob/master/docker/Dockerfile) - ejabberd v16.09 - Latest stable version.
-* [`16.12-beta1`](https://github.com/SunAngel/ejabberd-docker/blob/16.12-beta1/docker/Dockerfile), [`beta`](https://github.com/SunAngel/ejabberd-docker/blob/beta/docker/Dockerfile) - Latest avaliable beta version.
+* [`16.09`](https://github.com/VGoshev/ejabberd-docker/blob/16.09/docker/Dockerfile), [`latest`](https://github.com/VGoshev/ejabberd-docker/blob/master/docker/Dockerfile) - ejabberd v16.09 - Latest stable version.
+* [`16.12-beta1`](https://github.com/VGoshev/ejabberd-docker/blob/16.12-beta1/docker/Dockerfile), [`beta`](https://github.com/VGoshev/ejabberd-docker/blob/beta/docker/Dockerfile) - Latest avaliable beta version.
 
 ## Quickstart
 
@@ -42,6 +42,6 @@ For ejabberd configuration you can read [official ejabberd documentation](https:
 
 ## License
 
-This Dockerfile and scripts are released under [MIT License](https://github.com/SunAngel/ejabberd-docker/blob/master/LICENSE).
+This Dockerfile and scripts are released under [MIT License](https://github.com/VGoshev/ejabberd-docker/blob/master/LICENSE).
 
 [ejabberd](https://github.com/processone/ejabberd/blob/master/COPYING) has its own license.
