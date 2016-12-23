@@ -24,12 +24,12 @@ RUN /tmp/build.sh "$SW_VERSION" "$DATA_DIR" && rm /tmp/build.sh
 
 # Container initialization scripts
 COPY docker-run.sh /bin/docker-run
-COPY docker-run-root.sh /bin/docker-run-root
 
 EXPOSE 5222 5296
 VOLUME $DATA_DIR
 
-# Container will run some preparations with root access (fixing permissions, for example)
-#   and then execute /bin/docker-run with user access to configure (if needed) and run
+USER ejabberd
+
+# Container will execute /bin/docker-run with user access to configure (if needed) and run
 #		Ejabberd
-CMD ["/bin/docker-run-root"]
+CMD ["/bin/docker-run"]

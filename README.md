@@ -36,8 +36,7 @@ I would recommend you use host directory mapping of named volume to run containe
 ## ejabberd configuration
 
 For ejabberd configuration you can read [official ejabberd documentation](https://docs.ejabberd.im/), but there are some useful tips:
-* All ejabberd manipulation in container should be done under ejabberd user, to attach to container under ejabberd user you can use `docker exec -ti <container_name> su -l ejabberd`.
-* Most of ejabberd configuration\administration could be done via **`ejabberdctl`** utility. call it without arguments for help.
+* Most of ejabberd configuration\administration could be done via **`ejabberdctl`** utility. call it without arguments for help (for example, you can use `docker exec -ti <container_name> ejabberdctl` for it).
 * You can find some useful ejabberd plugins in [ejabberd-contrib](https://github.com/processone/ejabberd-contrib). Installation procedure is described there as well.
 * Ejabberd have feature of web-based administration. If you want to use so, then you should turn on it in ejabberd configuration file and public needed port.
 
