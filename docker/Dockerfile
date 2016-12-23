@@ -12,7 +12,7 @@ MAINTAINER Vladimir Goshev <sunx@sunx.name>
 # uUID - set UID of ffsync user, default: 2016
 # uGID - set GID of ffsync user, default: 2016
 ENV DATA_DIR="/home/ejabberd" \
-	SW_VERSION="16.09"
+	SW_VERSION="16.12"
 
 # All installation proccess is in build.sh
 # It is possible to do all work via RUN command(s)
@@ -26,7 +26,7 @@ RUN /tmp/build.sh "$SW_VERSION" "$DATA_DIR" && rm /tmp/build.sh
 COPY docker-run.sh /bin/docker-run
 COPY docker-run-root.sh /bin/docker-run-root
 
-EXPOSE 5222 5223 5296
+EXPOSE 5222 5296
 VOLUME $DATA_DIR
 
 # Container will run some preparations with root access (fixing permissions, for example)
