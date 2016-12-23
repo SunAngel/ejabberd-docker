@@ -6,7 +6,7 @@ Docker image with [Ejabberd XMPP Server](https://www.ejabberd.im/).
 * [`16.12`](https://github.com/VGoshev/ejabberd-docker/blob/16.12/docker/Dockerfile), [`latest`](https://github.com/VGoshev/ejabberd-docker/blob/master/docker/Dockerfile) - ejabberd v16.12 - Latest stable version.
 * [`16.12-beta1`](https://github.com/VGoshev/ejabberd-docker/blob/16.12-beta1/docker/Dockerfile), [`beta`](https://github.com/VGoshev/ejabberd-docker/blob/beta/docker/Dockerfile) - Latest available beta version.
 
-Dockerfiles for older versions of Seafile Server you can find [there](https://github.com/VGoshev/eejabberd-docker/tags).
+Dockerfiles for older versions of Seafile Server you can find [there](https://github.com/VGoshev/ejabberd-docker/tags).
 ## Quickstart
 
 To run container you can use following command:
