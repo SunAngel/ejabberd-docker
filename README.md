@@ -3,7 +3,7 @@ Docker image with [Ejabberd XMPP Server](https://www.ejabberd.im/).
 
 ## Supported tags and respective `Dockerfile` links
 
-* [`17.01`](https://github.com/VGoshev/ejabberd-docker/blob/17.01/docker/Dockerfile), [`latest`](https://github.com/VGoshev/ejabberd-docker/blob/master/docker/Dockerfile) - ejabberd v17.01 - Latest stable version.
+* [`17.03`](https://github.com/VGoshev/ejabberd-docker/blob/17.03/docker/Dockerfile), [`latest`](https://github.com/VGoshev/ejabberd-docker/blob/master/docker/Dockerfile) - ejabberd v17.03 - Latest stable version.
 * [`16.12-beta1`](https://github.com/VGoshev/ejabberd-docker/blob/16.12-beta1/docker/Dockerfile), [`beta`](https://github.com/VGoshev/ejabberd-docker/blob/beta/docker/Dockerfile) - Latest available beta version.
 
 Dockerfiles for older versions of Seafile Server you can find [there](https://github.com/VGoshev/ejabberd-docker/tags).
