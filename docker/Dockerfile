@@ -12,7 +12,7 @@ MAINTAINER Vladimir Goshev <sunx@sunx.name>
 # uUID - set UID of ffsync user, default: 2016
 # uGID - set GID of ffsync user, default: 2016
 ENV DATA_DIR="/home/ejabberd" \
-	SW_VERSION="17.04"
+	SW_VERSION="17.08"
 
 # All installation proccess is in build.sh
 # It is possible to do all work via RUN command(s)
